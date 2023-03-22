@@ -45,11 +45,13 @@ string [] Sort_array (string [] random_array)
         }
     }
     string [] sort_array = new string[size_sort_array];
+    size_sort_array = 0;
     for (int i = 0; i < random_array.Length; i++)
     {
         if (random_array[i].Length <= 3)
         {
-            sort_array[i] = random_array[i];
+            sort_array[size_sort_array] = random_array[i];
+            size_sort_array += 1;
         }
     }
     return sort_array;
