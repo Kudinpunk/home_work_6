@@ -29,27 +29,21 @@ void Show_array (string [] array)
     Console.Write("\n--> ");
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write(array[i] + ", ");
+        Console.Write(array[i] + " ");
     }
-    Console.WriteLine("\b\b ");
+    Console.WriteLine();
 }
 
 string [] Sort_array (string [] random_array)
 {
-    int size_sort_array = 0;
+    string [] sort_array = new string[random_array.Length];
+    int j = 0;
     for (int i = 0; i < random_array.Length; i++)
     {
         if (random_array[i].Length <= 3)
         {
-            size_sort_array += 1;
-        }
-    }
-    string [] sort_array = new string[size_sort_array];
-    for (int i = 0; i < random_array.Length; i++)
-    {
-        if (random_array[i].Length <= 3)
-        {
-            sort_array[i] = random_array[i];
+            sort_array[j] = random_array[i];
+            j++;
         }
     }
     return sort_array;
@@ -57,4 +51,5 @@ string [] Sort_array (string [] random_array)
 
 string [] user_array = Create_array();
 Show_array(user_array);
-Show_array(Sort_array(user_array));
+string [] sort_user_array = Sort_array(user_array);
+Show_array(sort_user_array);
